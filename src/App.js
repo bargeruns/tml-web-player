@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+
+import Player from './Player';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +10,7 @@ class App extends Component {
 
     this.state = {
       episodes: [],
-      selectedEpisode: undefined,
+      selectedEpisode: 0,
     }
   }
 
@@ -32,13 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <audio src="http://traffic.libsyn.com/themainloop/019-TML.mp3?dest-id=452115" controls></audio>
+        <Player episodes={this.state.episodes} selectedEpisode={this.state.selectedEpisode} />
       </div>
     );
   }
