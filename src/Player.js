@@ -6,7 +6,7 @@ export default class Player extends Component {
   render() {
     const { episodes, selectedEpisode } = this.props;
     return (
-      <PlayerDetails episode={episodes[0]} />
+      <PlayerDetails episode={episodes[selectedEpisode]} />
     );
   }
 }

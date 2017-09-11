@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       episodes: [],
-      selectedEpisode: 0,
+      selectedEpisode: 5,
     }
   }
 
