@@ -9,11 +9,11 @@ export default class Player extends Component {
     const { episodes, selectedEpisode } = this.props;
     return (
       <section className="container">
-        <div className="columns">
-          <div className="column is-two-thirds">
+        <div className="columns container">
+          <div className="column container">
             <PlayerDetails episode={episodes[selectedEpisode]} />
           </div>
-          <div className="column">
+          <div className="column container">
             <PlayerList episodes={episodes} />
           </div>
         </div>

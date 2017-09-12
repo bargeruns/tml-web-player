@@ -1,0 +1,17 @@
+.card {
+  max-width: 440px;
+  margin: auto;
+}
+
+audio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.card-image figure.episode-artwork {
+  margin: auto;
+  max-width: 440px;
+  height: auto;
+}
