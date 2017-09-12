@@ -1,0 +1,40 @@
+.navbar {
+  background-color: #a8d4f7;
+}
+
+.navbar .navbar-brand a.navbar-item {
+  color: yellow;
+  font-size: 2.45rem;
+  text-decoration: underline;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+.navbar .navbar-brand a.navbar-item:hover {
+  background-color: #a8d4f7;
+  color: #f3f3f3;
+}
+
+.navbar-end a.navbar-item.link {
+  color: yellow;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar-end a.navbar-item.link:hover {
+  background-color: #a8d4f7;
+  color: #f3f3f3;
+}
+
+.navbar-end a.navbar-item.callout {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+button.button.navbar-burger {
+  background-color: #a8d4f7;
+  border: none;
+}

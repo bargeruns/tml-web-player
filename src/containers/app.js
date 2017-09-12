@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 
-import Player from './Player';
-import './App.css';
+import Navbar from '../components/navbar';
+import Player from './player';
+import './app.css';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
 
     this.state = {
       episodes: [],
-      selectedEpisode: 5,
+      selectedEpisode: 0,
     }
   }
 
@@ -34,6 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         <Player episodes={this.state.episodes} selectedEpisode={this.state.selectedEpisode} />
       </div>
     );

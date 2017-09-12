@@ -1,0 +1,11 @@
+.list-container {
+  height: 75vh;
+  min-height: 250px;
+  width: 400px;
+  background-color: #fefefe;
+  border: 1px solid black;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
