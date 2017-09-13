@@ -4,12 +4,12 @@ import './navbar.css';
 
 const navBar = (props) => {
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar" aria-label="main navigation">
     <div className="navbar-brand">
       <a className="navbar-item" href="/">
         TML
       </a>
-  
+
       <button className="button navbar-burger">
         <span></span>
         <span></span>

@@ -1,13 +1,12 @@
 .navbar {
-  background-color: #a8d4f7;
+  background-color: #fefefe;
+  border-bottom: 2px solid #f3f3f3;
 }
 
 .navbar .navbar-brand a.navbar-item {
-  color: yellow;
   font-size: 2.45rem;
   text-decoration: underline;
   font-family: 'Cabin', sans-serif;
-  font-weight: bold;
 }
 
 .navbar .navbar-brand a.navbar-item:hover {
@@ -16,7 +15,6 @@
 }
 
 .navbar-end a.navbar-item.link {
-  color: yellow;
   font-family: 'Cabin', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
@@ -28,7 +26,7 @@
 }
 
 .navbar-end a.navbar-item.callout {
-  color: yellow;
+  color: #ffe18d;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Cabin', sans-serif;
@@ -37,7 +35,8 @@
 .navbar-end a.navbar-item.callout:hover {
   background-color: #a8d4f7;
 }
+
 button.button.navbar-burger {
-  background-color: #a8d4f7;
+  background-color: #fefefe;
   border: none;
 }

@@ -1,9 +1,23 @@
 .card {
-  max-width: 440px;
+  width: 32vw;
+  min-width: 250px;
+  max-width: 500px;
+  height: auto;
   margin: auto;
 }
 
+.card .card-content {
+  font-size: .85rem;
+}
+
+.card .card-content p.episode-title {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #f3f3f3;
+}
+
 audio {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,6 +26,12 @@ audio {
 
 .card-image figure.episode-artwork {
   margin: auto;
-  max-width: 440px;
+  width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100vw;
+  }
 }

@@ -9,24 +9,25 @@ const playerDetails = ({episode}) => {
   }
 
   const audioUrl = episode.enclosure.url;
+  const artworkUrl = _.get(episode, 'itunes:image.href');
+  const title = episode.title;
+  const subtitle = episode['itunes:subtitle'];
 
   return (
     <div className="card">
-      <div className="card-header">
-        <p className="card-header-title">Episode {episode.title}</p>
-      </div>
       <div className="card-image">
         <figure className="image episode-artwork">
-          <img src={episode['itunes:image'].href} alt=""/>
+          <img src={artworkUrl} alt=""/>
         </figure>
       </div>
       <div className="card-content">
+        <p className="episode-title">{title}</p>
         <div className="media">
           <div className="media-content">
             <audio src={audioUrl} controls></audio>
           </div>
         </div>
-        {episode['itunes:subtitle']}
+        <p>{subtitle}</p>
       </div>
     </div>
   );

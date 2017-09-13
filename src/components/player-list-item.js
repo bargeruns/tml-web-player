@@ -4,12 +4,10 @@ import './player-list-item.css';
 
 const playerListItem = ({episode}) => {
   return (
-    <div className="list-item">
-      <div className="play-button">
-        <i className="fa fa-play-circle-o fa-2x"></i>
-      </div>
+    <li className="episode-list-item">
       <p>{episode.title}</p>
-    </div>
+      <i className="fa fa-play-circle fa-2x"></i>
+    </li>
   );
 }
 

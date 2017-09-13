@@ -1,11 +1,21 @@
-.list-container {
-  height: 75vh;
-  min-height: 250px;
-  width: 400px;
-  background-color: #fefefe;
-  border: 1px solid black;
-  overflow: auto;
+ul.card.episode-list {
+  padding: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  max-height: 80vh;
+  overflow-y: scroll;
+  width: 64vw;
+  max-width: 500px;
+}
+
+@media device,screen and (max-width: 768px) {
+  .column {
+    width: 100vw;
+  }
+
+  ul.card.episode-list {
+    overflow: scroll;
+    width: 100%;
+  }
+
 }
