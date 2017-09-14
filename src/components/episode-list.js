@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
-import './player-list.css';
-import PlayerListItem from './player-list-item';
+import './episode-list.css';
 
-export default class PlayerList extends Component {
+export default class EpisodeList extends Component {
   renderList() {
     return this.props.episodes.map(episode => {
-      return <PlayerListItem episode={episode} />;
+      return (
+        <li className="episode-list-item" id={episode.title}>
+          <p>{episode.title}</p>
+          <i className="fa fa-play-circle fa-2x"></i>
+        </li>
+      );
     });
   }
 

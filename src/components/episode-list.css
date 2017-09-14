@@ -1,0 +1,51 @@
+ul.card.episode-list {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: scroll;
+  width: 64vw;
+  max-width: 500px;
+}
+
+ul.card.episode-list li.episode-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  height: 60px;
+  line-height: 64px;
+  font-weight: bold;
+  border-bottom: .75px solid #f3f3f3;
+}
+
+ul.card.episode-list li.episode-list-item:hover {
+  cursor: pointer;
+  background-color: #f3f3f3;
+}
+
+ul.card.episode-list li.episode-list-item p {
+  padding-left: 24px;
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+ul.card.episode-list li.episode-list-item i {
+  padding-right: 24px;
+  color: #ffe18d;
+}
+
+@media device,screen and (max-width: 768px) {
+  .column {
+    width: 100vw;
+  }
+
+  ul.card.episode-list {
+    overflow: scroll;
+    width: 100%;
+  }
+
+}

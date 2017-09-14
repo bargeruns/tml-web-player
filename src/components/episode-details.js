@@ -1,9 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 
-import './player-details.css';
+import './episode-details.css';
 
-const playerDetails = ({episode}) => {
+const episodeDetails = ({episode}) => {
   if (!episode) {
     return <h2>Loading...</h2>;
   }
@@ -33,4 +33,4 @@ const playerDetails = ({episode}) => {
   );
 }
 
-export default playerDetails;
+export default episodeDetails;

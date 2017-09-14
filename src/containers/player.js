@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import PlayerDetails from '../components/player-details';
-import PlayerList from '../components/player-list';
+import EpisodeDetails from '../components/episode-details';
+import EpisodeList from '../components/episode-list';
 import './player.css';
 
 export default class Player extends Component {
@@ -11,10 +11,10 @@ export default class Player extends Component {
       <section className="container">
         <div className="columns">
           <div className="column">
-            <PlayerDetails episode={episodes[selectedEpisode]} />
+            <EpisodeDetails episode={episodes[selectedEpisode]} />
           </div>
           <div className="column">
-            <PlayerList episodes={episodes} />
+            <EpisodeList episodes={episodes} />
           </div>
         </div>
       </section>
