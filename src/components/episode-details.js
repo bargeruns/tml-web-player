@@ -1,10 +1,10 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 
 import './episode-details.css';
 
 const episodeDetails = ({episode}) => {
-  if (!episode) {
+  if (_.isEmpty(episode)) {
     return <h2>Loading...</h2>;
   }
 
@@ -34,3 +34,4 @@ const episodeDetails = ({episode}) => {
 }
 
 export default episodeDetails;
+

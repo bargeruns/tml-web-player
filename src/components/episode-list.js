@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
+import _ from 'lodash';
+import React from 'react';
 
 import './episode-list.css';
 
-export default class EpisodeList extends Component {
-  renderList() {
-    return this.props.episodes.map(episode => {
-      return (
-        <li className="episode-list-item" id={episode.title}>
-          <p>{episode.title}</p>
-          <i className="fa fa-play-circle fa-2x"></i>
-        </li>
-      );
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <ul className="card episode-list">
-          {this.renderList()}
-        </ul>
-      </div>
-    );
-  }
+const renderEpisodeItem = (episode) => {
+  return (
+    <li className="episode-list-item">
+      <p>{episode.title}</p>
+      <i className="fa fa-play-circle fa-2x"></i>
+    </li>
+  );
 }
 
+const episodeList = ({ episodes }) => {
+  if (_.isEmpty(episodes)) {
+    return (
+      <ul className="card episode-list">
+        <li>Loading Latest Episodes...</li>
+      </ul>
+    );
+  }
+
+  return (
+    <ul className="card episode-list">
+      {_.map(episodes, renderEpisodeItem)}
+    </ul>
+  );
+}
+
+export default episodeList;
