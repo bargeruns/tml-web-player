@@ -1,0 +1,20 @@
+div.card.nav-menu {
+  height: auto;
+  position: absolute;
+  width: 50px;
+  margin-top: 56px;
+  margin-left: 20px;
+  z-index: 9999;
+  border-radius: 2px;
+}
+
+.card.nav-menu ul.menu-list {
+  padding: 8px;
+}
+
+.card.nav-menu ul.menu-list li.nav-menu-item {
+  padding: 8px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.15rem;
+}

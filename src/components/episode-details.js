@@ -2,8 +2,17 @@ import _ from 'lodash';
 import React from 'react';
 
 import './episode-details.css';
+import NavButton from '../containers/nav-menu-button.js';
 
-const episodeDetails = ({episode}) => {
+const renderMenuButton = (show) => {
+  if (show) {
+    return <NavButton />;
+  }
+
+  return null;
+}
+
+const episodeDetails = ({episode, showNavButton}) => {
   if (_.isEmpty(episode)) {
     return <h2>Loading...</h2>;
   }
@@ -16,6 +25,7 @@ const episodeDetails = ({episode}) => {
   return (
     <div className="card">
       <div className="card-image">
+        {renderMenuButton(showNavButton)}
         <figure className="image episode-artwork">
           <img src={artworkUrl} alt=""/>
         </figure>

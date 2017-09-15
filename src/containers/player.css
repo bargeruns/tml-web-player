@@ -1,4 +1,10 @@
 section.container {
-  padding-top: 14px;
+  padding-top: 74px;
+}
+
+@media screen and (max-width: 767px) {
+  section.container {
+    padding: 0;
+  }
 }
 

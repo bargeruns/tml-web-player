@@ -25,6 +25,7 @@ class Player extends Component {
     return (
       <EpisodeDetails
         episode={this.props.nowPlaying || getFirstFromObject(this.props.episodes)}
+        showNavButton={this.props.displayMode === 'mobile'}
       />
     );
   }
@@ -50,8 +51,9 @@ class Player extends Component {
 const mapStateToProps = state => {
   return {
     episodes: state.episodes,
-    selectedEpisode: state.selectedEpisode
-  }
+    selectedEpisode: state.selectedEpisode,
+    displayMode: state.displayMode,
+  };
 }
 
 export default connect(mapStateToProps, { fetchEpisodes, selectEpisode })(Player);
