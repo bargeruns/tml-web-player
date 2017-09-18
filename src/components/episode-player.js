@@ -2,11 +2,19 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { toggleMobilePicker, setNowPlaying } from '../actions';
 import { getFirstFromObject } from '../utils';
 import './episode-player.css';
+import EpisodePicker from './episode-picker.js';
 import NavButton from '../containers/nav-menu-button.js';
 
 class EpisodePlayer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.showEpisodePicker = false;
+  }
+
   returnEpisode(props) {
     if (props.nowPlaying) {
       return props.episodes[props.nowPlaying];
@@ -15,9 +23,27 @@ class EpisodePlayer extends Component {
     }
   }
 
+  renderEpisodePicker() {
+    if (this.props.displayMode === 'mobile') {
+      return (
+        <EpisodePicker
+          episodes={this.props.episodes}
+          nowPlaying={this.props.nowPlaying}
+          setNowPlaying={this.props.setNowPlaying}
+          shouldShowPicker={this.props.showMobilePicker}
+          togglePicker={this.props.toggleMobilePicker}
+        />
+      );
+    }
+  }
+
   render() {
     if (_.isEmpty(this.props.episode)) {
-      return <h2>Loading Episode...</h2>
+      return (
+        <div className="card">
+          <h2>Loading Latest Episode...</h2>
+        </div>
+      );
     }
 
     const episode = this.returnEpisode(this.props);
@@ -36,6 +62,7 @@ class EpisodePlayer extends Component {
 
     return (
       <div className="card">
+        {this.renderEpisodePicker()}
         <div className="card-image">
           {renderMenuButton(displayMode)}
           <figure className="image episode-artwork">
@@ -61,8 +88,9 @@ const mapStateToProps = state => {
     episodes: state.episodes,
     nowPlaying: state.nowPlaying,
     displayMode: state.displayMode,
+    showMobilePicker: state.showMobilePicker,
   }
 }
 
-export default connect(mapStateToProps)(EpisodePlayer);
+export default connect(mapStateToProps, { toggleMobilePicker, setNowPlaying })(EpisodePlayer);
 

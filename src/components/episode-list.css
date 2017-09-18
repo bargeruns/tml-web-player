@@ -46,6 +46,8 @@ ul.card.episode-list li.episode-list-item i {
   ul.card.episode-list {
     overflow: scroll;
     width: 100%;
+    max-height: 85vh;
+    border-top: none;
   }
 
 }

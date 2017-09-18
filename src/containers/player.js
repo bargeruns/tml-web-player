@@ -17,9 +17,26 @@ class Player extends Component {
     this.props.fetchEpisodes();
   }
 
+  renderEpisodeList() {
+    if (this.props.displayMode === 'desktop') {
+      return (
+        <div className="column">
+          <EpisodeList
+            episodes={this.props.episodes}
+            setNowPlaying={this.props.setNowPlaying}
+          />
+        </div>
+      );
+    }
+  }
+
   renderEpisodePlayer() {
     if (_.isEmpty(this.props.episodes)) {
-      return <h2>Loading Episode...</h2>;
+      return (
+        <div className="card">
+          <h2>Loading Latest Episode...</h2>
+        </div>
+      )
     }
 
     return (
@@ -37,12 +54,7 @@ class Player extends Component {
           <div className="column">
             {this.renderEpisodePlayer()}
           </div>
-          <div className="column">
-            <EpisodeList
-              episodes={this.props.episodes}
-              setNowPlaying={this.props.setNowPlaying}
-            />
-          </div>
+          {this.renderEpisodeList()}
         </div>
       </section>
     );

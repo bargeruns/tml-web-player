@@ -1,0 +1,25 @@
+.card.episode-picker {
+  position: absolute;
+  bottom: 0;
+  z-index: 999999;
+  height: auto;
+  width: 77vw;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+
+.card.episode-picker ul.episode-picker-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.episode-picker h2.open-button, .card.episode-picker h2.dismiss-button {
+  text-align: center;
+  cursor: pointer;
+}

@@ -32,7 +32,8 @@ audio {
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 100%;
+    margin: 0 auto;
+    width: 100vw;
     height: 100vh;
     max-height: 900px;
   }
