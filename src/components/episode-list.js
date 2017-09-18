@@ -3,16 +3,19 @@ import React from 'react';
 
 import './episode-list.css';
 
-const renderEpisodeItem = (episode) => {
-  return (
-    <li className="episode-list-item" key={episode.title}>
-      <p>{episode.title}</p>
-      <i className="fa fa-play-circle fa-2x"></i>
-    </li>
-  );
-}
+const renderEpisodeItems = (episodes, setNowPlaying) => {
+  return _.map(episodes, (episode) => {
+    return (
+      <li className="episode-list-item" key={episode.title} onClick={() => setNowPlaying(episode.title)}>
+        <p>{episode.title}</p>
+        <i className="fa fa-play-circle fa-2x"></i>
+      </li>
+    );
 
-const episodeList = ({ episodes }) => {
+  })
+};
+
+const episodeList = ({ episodes, setNowPlaying }) => {
   if (_.isEmpty(episodes)) {
     return (
       <ul className="card episode-list">
@@ -23,9 +26,9 @@ const episodeList = ({ episodes }) => {
 
   return (
     <ul className="card episode-list">
-      {_.map(episodes, renderEpisodeItem)}
+      {renderEpisodeItems(episodes, setNowPlaying)}
     </ul>
   );
-}
+};
 
 export default episodeList;

@@ -15,7 +15,7 @@ export function fetchEpisodes() {
   };
 }
 
-export function selectEpisode(title) {
+export function setNowPlaying(title) {
   return {
     type: SELECT_EPISODE,
     title

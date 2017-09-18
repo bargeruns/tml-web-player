@@ -3,7 +3,7 @@ import { SELECT_EPISODE } from '../actions';
 const selectedEpisode = (state = '', action) => {
   switch (action.type) {
   case SELECT_EPISODE:
-    return Object.assign({}, state, action.title);
+    return action.title;
   default:
     return state;
   }

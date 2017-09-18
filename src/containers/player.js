@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchEpisodes, selectEpisode } from '../actions';
+import { fetchEpisodes, setNowPlaying } from '../actions';
 import EpisodePlayer from '../components/episode-player';
 import EpisodeList from '../components/episode-list';
 import './player.css';
@@ -40,6 +40,7 @@ class Player extends Component {
           <div className="column">
             <EpisodeList
               episodes={this.props.episodes}
+              setNowPlaying={this.props.setNowPlaying}
             />
           </div>
         </div>
@@ -51,10 +52,10 @@ class Player extends Component {
 const mapStateToProps = state => {
   return {
     episodes: state.episodes,
-    selectedEpisode: state.selectedEpisode,
+    nowPlaying: state.nowPlaying,
     displayMode: state.displayMode,
   };
 }
 
-export default connect(mapStateToProps, { fetchEpisodes, selectEpisode })(Player);
+export default connect(mapStateToProps, { fetchEpisodes, setNowPlaying })(Player);
 
