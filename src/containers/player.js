@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchEpisodes, selectEpisode } from '../actions';
-import EpisodeDetails from '../components/episode-details';
+import EpisodePlayer from '../components/episode-player';
 import EpisodeList from '../components/episode-list';
 import './player.css';
 
@@ -17,13 +17,13 @@ class Player extends Component {
     this.props.fetchEpisodes();
   }
 
-  renderEpisodeDetails() {
+  renderEpisodePlayer() {
     if (_.isEmpty(this.props.episodes)) {
       return <h2>Loading Episode...</h2>;
     }
 
     return (
-      <EpisodeDetails
+      <EpisodePlayer
         episode={this.props.nowPlaying || getFirstFromObject(this.props.episodes)}
         showNavButton={this.props.displayMode === 'mobile'}
       />
@@ -35,7 +35,7 @@ class Player extends Component {
       <section className="container">
         <div className="columns">
           <div className="column">
-            {this.renderEpisodeDetails()}
+            {this.renderEpisodePlayer()}
           </div>
           <div className="column">
             <EpisodeList

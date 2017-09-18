@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -27,8 +26,8 @@ class App extends Component {
 
     if (window.innerWidth > 768) {
       this.props.setDisplayMode('desktop');
-      window.addEventListener('resize', this.setMobileDisplay);
     }
+    window.addEventListener('resize', this.setMobileDisplay);
   }
 
   renderMenuButton() {
@@ -57,3 +56,4 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { fetchEpisodes, setDisplayMode })(App);
+
