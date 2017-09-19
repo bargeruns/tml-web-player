@@ -4,12 +4,18 @@ section.container {
 
 @media screen and (max-width: 767px) {
   section.container {
+    margin: 0;
     padding: 0;
   }
 
-  section.container div.columns: {
-    margin: 0;
+  section.container div.columns  {
     width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  section.container div.columns div.column {
+    height: 100vh;
     padding: 0;
   }
 }

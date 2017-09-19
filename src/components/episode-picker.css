@@ -11,6 +11,24 @@
   border-radius: 5px;
 }
 
+.card.episode-picker.is-open {
+  animation-name: slidein;
+  animation-duration: .5s;
+}
+
+.card.episode-picker-collapsed {
+  position: absolute;
+  bottom: 0;
+  z-index: 999999;
+  height: auto;
+  max-height: 88px;
+  width: 77vw;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
 
 .card.episode-picker ul.episode-picker-list {
   display: flex;
@@ -19,7 +37,17 @@
   align-items: center;
 }
 
-.card.episode-picker h2.open-button, .card.episode-picker h2.dismiss-button {
+.card.episode-picker-collapsed h2.open-button, .card.episode-picker h2.dismiss-button {
   text-align: center;
   cursor: pointer;
+}
+
+
+@keyframes slidein {
+  from {
+    margin-bottom: -300px;
+  }
+  to {
+    margin-bottom: 0;
+  }
 }

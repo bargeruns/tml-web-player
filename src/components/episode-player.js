@@ -13,6 +13,7 @@ class EpisodePlayer extends Component {
     super(props);
 
     this.showEpisodePicker = false;
+    this.setNowPlaying = this.setNowPlaying.bind(this);
   }
 
   returnEpisode(props) {
@@ -23,13 +24,18 @@ class EpisodePlayer extends Component {
     }
   }
 
+  setNowPlaying(title) {
+    this.props.setNowPlaying(title);
+    this.props.toggleMobilePicker(false);
+  }
+
   renderEpisodePicker() {
     if (this.props.displayMode === 'mobile') {
       return (
         <EpisodePicker
           episodes={this.props.episodes}
           nowPlaying={this.props.nowPlaying}
-          setNowPlaying={this.props.setNowPlaying}
+          setNowPlaying={this.setNowPlaying}
           shouldShowPicker={this.props.showMobilePicker}
           togglePicker={this.props.toggleMobilePicker}
         />

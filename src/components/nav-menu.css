@@ -17,4 +17,10 @@ div.card.nav-menu {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.15rem;
+  cursor: pointer;
 }
+
+.card.nav-menu ul.menu-list li.nav-menu-item:hover {
+  background-color: #f3f3f3;
+}
+
